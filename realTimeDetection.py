@@ -1,9 +1,10 @@
+-*- coding: utf-8 -*-
 import numpy as np
 import argparse
 import time
 import cv2
-# choose one from the following two:
-# 1. construct the argument parse and parse the arguments
+
+# construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-p", "--prototxt", required=True,
 	help="path to Caffe 'deploy' prototxt file")
@@ -12,9 +13,6 @@ ap.add_argument("-m", "--model", required=True,
 ap.add_argument("-c", "--confidence", type=float, default=0.4,
 	help="minimum probability to filter weak detections")
 args = vars(ap.parse_args())
-
-# 2. 将以下所有的args["prototxt"]/args["model"]
-# 换成 protext和model文件的路径
 
 # initialize the list of class labels MobileNet SSD was trained to
 # detect, then generate a set of bounding box colors for each class
